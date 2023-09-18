@@ -1,5 +1,8 @@
 LOCAL_PATH := device/samsung/a5xelte
 
+TARGET_OTA_ASSERT_DEVICE := a5xelte,a5xeltexx,a5xe3g,
+
+
 # Platform
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -46,15 +49,18 @@ TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_EXCLUDE_NANO := true
 TW_EXCLUDE_BASH := true
+TW_DEVICE_VERSION	:= 0_notnoelchannel
 # Display & Graphics
+TW_MAX_BRIGHTNESS 		         := 255
+TW_DEFAULT_BRIGHTNESS 			 := 162
 TW_THEME                         := portrait_hdpi
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TARGET_RECOVERY_PIXEL_FORMAT     := "RGBA_8888"
 TW_BRIGHTNESS_PATH               := "/sys/devices/14800000.dsim/backlight/panel/brightness"
 
 # TWRP Recovery
 TW_EXCLUDE_SUPERSU          := false
 BOARD_SUPPRESS_SECURE_ERASE := true
+TARGET_RECOVERY_FSTAB := device/samsung/a5xelte/recovery/recovery.fstab
 
 # SHRP Recovery
 SHRP_MAINTAINER := notnoelchannel
